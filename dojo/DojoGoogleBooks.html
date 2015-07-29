@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+	
+	<meta charset = "utf-8">
+	<title> Google Books API Using Dojo</title>
+</head>
+
+<body>
+	
+	<div id = "container" class = "container">
+	  <div class = "row">		
+		<div class = "col-md-2" id = "left">
+			
+			<form method="get">
+							<div class="form-group">
+								<label class="title" for="author">author</label>
+								<input type="text" class="form-control" id="author" />
+							</div>
+							<div class="form-group">
+								<label class="title" for="bktitle">Title</label>
+								<input type="text" class="form-control" id="bktitle" />
+							</div>
+							<div class="form-group">
+								<button id = "button" class="btn btn-default" type="input">Search</button>
+							</div>
+							
+						</form>
+		</div>
+		
+		<div id = "right" class = "col-md-8">
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Wish list</button>
+						<div class="form-group">
+							<table class="table table-bordered" id="table">
+								<tbody id = "tbody">
+									<tr>
+										<td>add to wishlist</td>
+										<td>thumbnail</td>
+										<td>title</td>
+										<td>Authors</td>
+										<td>Description</td>
+										<td>Buy Link</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-2">
+							<!-- Large modal -->
+							<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+								<div class="modal-dialog modal-lg">
+									<div class="modal-content"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				require(["dojo/dom-construct","dojo/parser","dojo/dom","dijit/registry","dojo/on","dojo/json","dojo/request","dojo/domReady!"],function(domConstruct,parser,dom,registry,on,JSON,request){
+					
+					
+					
+					var button = dom.byId("button");
+					
+					
+					
+					
+					on(button,"click",function(evt){
+						var url = 'https://www.googleapis.com/books/v1/volumes?q=' ;
+						var author = '';
+						var desc;
+						var buy;
+						var thumb;
+					
+						
+						evt.preventDefault();
+						var au = document.getElementById("author");
+						var tit = document.getElementById("bktitle");
+						
+						
+						if(au.value.length > 2){
+							url +='inauthor:'+au.value + ' &20maxResults=40';
+							console.log(url);
+						}
+						else{
+							url = url + 'intitle:'+ tit.value + ' &20maxResults=40';
+						}
+					
+					
+					request.get(url,{handleAs:"json"}).then(function(response){
+						for(var key in response.items){
+							
+							var urlvc = urlvc = 'http://tts-api.com/tts.mp3?q=';
+							var titleLink = [];
+							var book =  response.items[key];
+							
+							if(book.volumeInfo.title){
+								var title = book.volumeInfo.title;
+								console.log(title);
+								titleLink = book.volumeInfo.title.split(' ');
+								
+							}
+							
+							if(book.volumeInfo.authors){
+								for(var auth in book.volumeInfo.authors){
+									author += book.volumeInfo.authors[auth]+'\n';
+								}
+							}
+							
+							if(book.volumeInfo.description){
+								desc = book.volumeInfo.description;
+							}
+							else{
+								desc = "none available";
+							}
+							
+							if(book.volumeInfo.infoLink){
+								buy = book.volumeInfo.infoLink;
+							}
+							else{
+								buy = 'not available';
+							}
+							
+							if(book.volumeInfo.imageLinks){
+								thumb = book.volumeInfo.imageLinks.smallThumbnail;
+							}
+							else{
+								thumb = 'not available';
+							}
+							
+							for (var words in titleLink) {
+							
+							urlvc += titleLink[words] + '+';
+
+						    }
+							
+							var table = dom.byId("tbody");
+							var row = domConstruct.toDom('<tr><td><button class="btn btn-default" type="submit">Add to list</button></td><td><img src =' + thumb + 'class = "img-responsive" height = "150" width = "150" alt = "no pic available" </img></td><td><a href =' + urlvc + ' target = "_blank">' + title + '</td><td>' + author + '</td><td>' + desc + '</td><td><a class="btn btn-default" href=' + buy + 'role="button">Buy</a></td></tr>');
+							
+							domConstruct.place(row,table);
+							}
+							au.value = '';
+							tit.value ='';
+							
+					})
+					
+					});
+					
+					var next = dom.byId("next");
+					on(next,"click",function(evt){
+						request.get
+					})
+				});
+			</script>
+			<button id = "next" class="btn btn-default" type="input">next 40</button>
+			
+	</body>
+</html>
+	

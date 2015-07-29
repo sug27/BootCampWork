@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stephen Anton Petkus</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        
+		<style type="text/css">
+            
+			 
+				div#left{
+				background-color: red;
+				height: 100vh;
+			    }
+			    div#mid{
+				background-color: blue;
+				height:100vh;
+			    }
+			    div#right{
+				background-color: green;
+				height:100vh;
+			    }
+			
+			div#btn{
+			text-align: center;	
+			}
+			.form-group{
+				color: black;
+				padding: 0;
+				font-size: 1.5vw;
+				margin:0;
+			}
+			
+			.checkbox{
+				margin:0;
+			}
+			
+			h1{
+				color:white;
+			}
+			
+			p{
+				color:black;
+			 }
+		    body{
+				padding-top: 80px;
+			}
+			
+		
+	    </style>
+	</head>
+	
+	<body>
+		<div id="container" class = "container">
+			<nav class = "navbar navbar-default navbar-fixed-top">
+				<ul class ="nav">
+					<li>
+						<div class="btn-group">
+							<button type="button" class = "btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Action<span class=""></span>
+							</button>	
+						<ul class="dropdown-menu">
+							<li><a href="#">p</a></li>
+							<li><a href="#">M</a>
+								<ul class= "hormenu">
+									<li><a href="#">blah</a></li>
+									<li><a href="#">meh</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		
+			
+			
+			<div class="row">
+				<div id = "left" class= "col-sm-4">
+					<img src = "C:\Users\Stephen\Desktop\me.jpg" class="img-circle" id= "pic" alt = "me" title = "me"/>					
+				</div>
+				
+				<div id="mid" class="col-sm-4">
+					<form method="post" >
+						<div class="form-group">
+						<label class="title" for = "txtFname"> First  Name</label>
+			            <input type = "text" class="form-control" id = "txtFname" class="registration"/></input>
+		                </div>
+						
+						<div class="form-group">
+			            <label class="title" for="txtLast">Last Name</label>
+			            <input type = "text" class="form-control" id = "txtLast" name="txtLast" class= "registration"/></input>
+			            </div>
+						
+						<div class="form-group">
+			            <label class="title" for= "email"> E-mail</label>
+			            <input class="form-control" type = "text" id = "email" name="email" class= "registration"/></input>
+			
+			            </div>
+			
+			             <div class="form-group">
+			             <label class="title" for= "Country"> Country</label>
+			             <select class="form-control" id= "Country" name= "country" class= "registration">
+				         <option value = "" selected = "selected"></option>
+  			             <option value ="United States">United States</option>
+				         <option value ="Ireland"> Ireland</option>
+			             </select>
+			             </div>
+			
+			             <div class="form-group">
+				         <label class="title" for="dob">Date of Birth</label>
+				         
+						 <select class ="form-control" id = "day" name = "day">
+					     <option value = "-1">Day:</option>
+					     <option value= "1">1</option>
+					     <option value= "30">30</option>
+					     </select>
+				         
+						 <select class = "form-control" id = "month" name = "month">
+					     <option value= "-1">Month:</option>
+					     <option value="1">Jan</option>
+					     <option value="12">Dec</option>
+				         </select>
+				
+				         <select class="form-control" id="year" name="year">
+					     <option value = "-1">Year</option>
+					     <option value="00">2000</option>
+					     </select>
+				         </div>
+				         
+						 <div class="form-group">
+					     <label class="title">Sex</label>
+					     <input type= "radio" name="sex" value="male"/><span class="chtext">Male</span>
+					     <input type="radio" name= "sex" value="female"/><span class="chtext">Female</span>
+				         </div>
+				
+				        <div class="form-group">
+					    <label > Interests</label>
+					    <div class="checkbox">
+					    <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                        </label>
+					    </div>
+				        </div>
+						
+				        <div id ="btn">	 
+			            <input type="submit" value= "submit" class="registration"/></input>
+		                </div>		
+							
+				</div>
+				
+				<div id = "right" class="col-sm-4">
+				    <h1> About Me </h1>
+				    <p> A long time ago in a galaxy far,far, away......I made columns....that <b>shrink.</b></p>	
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>

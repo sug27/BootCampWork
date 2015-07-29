@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Einstein's Pi Order Now</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<style type="text/css">
+			
+			.img-rounded{
+				width:100%;
+			}
+			
+			div#left{
+				overflow:auto;
+			}
+			
+			div#container{
+				background-color: yellow;
+				overflow:auto;
+			}
+		    
+			.navbar{
+				background-color: black;
+				min-height: 0px;
+			}
+			
+			.img-circle{
+				width:100%;
+			}
+			
+			input#city{
+				width:50%;
+				float:left;
+			}
+			
+			input[list]{
+				width:20%;
+				float:left;
+			}
+			input#zip{
+				width:30%;
+			}
+			
+			div#btn{
+			text-align: center;	
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="container" class="container">
+				<nav class="navbar navbar-default">
+					<div class="btn-group">
+						 <button type="button" class="btn btn-default" role="group" aria-label="Home"><a href ="C:\Users\Stephen\Desktop\pages\Pizza Place\PizzaMain.html"> Home</a></button>
+					     <button type="button" class="btn btn-default" role="group" aria-label="Home"><a href ="C:\Users\Stephen\Desktop\pages\Pizza Place\orderPage.html"> Order</a></button>
+					 </div>
+				</nav>
+				
+				<div class="row">
+					<div id ="left" class="col-sm-4">
+						<img src="hotPizza.jpg" class="img-rounded" id="lady pizza" alt="lady pizza" title="lady pizza"/>
+				    </div>
+					
+					<div id ="mid" class="col-sm-4">
+						<form method="post" action="C:\Users\Stephen\Desktop\pages\Pizza Place\success.html">
+							
+							
+							<div class="form-group">
+								<select class="form-control" id ="size" name="size" required="required">
+									<option value="size">size</option>
+									<option value="small">small</option>
+									<option value="medium">medium</option>
+									<option value="large">large</option>
+									<option value="x-large">x-large</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<select class="form-control" id="sauce" name="sauce" required="required">
+									<option value="sauce">sauce</option>
+									<option value="none">none</option>
+									<option value="regular" selected="selected">regular</option>
+									<option value="extra sauce">extra sauce</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<select class="form-control" id="cheese" name="cheese" placeholder="cheese" required="required">
+									<option value="cheese">cheese</option>
+									<option value="none"> none</option>
+									<option value="regular"selected="selected">regular</option>
+									<option value="extra cheese">extra cheese</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<select multiple class="form-control" id="veggies" name="veggies" required="required" >
+									<option value="none">none</option>
+									<option value="olives">olives</option>
+									<option value="bell peppers">bell peppers</option>
+									<option value="onions">onions</option>
+									<option value="mushrooms">mushrooms</option>
+								</select>
+							</div>
+							
+							<div class="form-group">
+								<select multiple class="form-control" id="meats" name="meats" required="required">
+									<option value="none">none</option>
+									<option value="italian sausage">italian sausage</option>
+									<option value="pepperoni">pepperoni</option>
+									<option value="ham">ham</option>
+									<option value="bacon">bacon</option>
+									<option value="ground beef">ground beef</option>
+								</select>
+							</div>
+							
+								
+							<div class="form-group">
+								<input type="text" class="form-control" id="name" placeholder="name"required="required"/>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="address" placeholder="address"required="required"/>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="city" placeholder="city"required="required"/>
+							</div>
+							<div class="form-group">
+								<input list="state" class="form-control"  placeholder="state"required="required"/>
+							    <datalist id="state">
+									<option value="Il"></option>
+									<option value="Va"></option>
+									<option value = "Md"></option>
+							
+							</div>
+							<div class="form-group">
+								<input type="number" class="form-control" id="zip" placeholder="zip" min="00001" max="99999" required="required"/>
+							</div>
+							
+							<div class= "form-group" id="btn">
+								<button class="btn btn-default" id="submit" type="submit" >Submit</button>
+							</div>
+						</form>
+					</div>
+					
+					<div id="right" class="col-sm-4">
+						<img src="controllerpizza.jpg" class="img-circle" alt="controller pizza" title="controller pizza"/>
+                    </div>	
+	</body>
+	
+</html>

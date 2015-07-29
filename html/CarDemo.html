@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		
+	</head>
+	
+	<body>
+		<div class="dd">
+			<select id="meh">
+				<option value ="suv">suv</option>
+				<option value ="sedan">sedan</option>
+				<option value="coupe">coupe</option>
+			</select>
+		</div>
+		
+		<div id="boxes">
+			<input type="text" id="year" />
+			<input type="text" id="model" />
+			<input type="text" id="make" />
+			<input type="text" id="carType" />
+			
+		</div>
+		
+		<script>
+			window.onload = function(){
+			function Car(year,model,make,carType){
+				this.year=year;
+				this.model=model;
+				this.make=make;
+				this.carType=carType;
+			}
+			
+			var car1 = new Car(1984,'pontiac','firebird','coupe');
+			var car2 = new Car(2015,'Honda','Civic','sedan');
+			var car3 = new Car(1925,'Ford','Model T','suv');
+			
+			
+			
+			var elDrop = document.getElementById('meh');
+			elDrop.addEventListener('change',func);
+			
+			function func(){
+				if(elDrop.value == 'suv'){
+					document.getElementById("year").value = car3.year;
+			        document.getElementById("model").value = car3.model;
+			        document.getElementById("make").value = car3.make;
+			        document.getElementById("carType").value = car3.carType;
+				}
+				
+				if(elDrop.value=='coupe'){
+					document.getElementById("year").value = car1.year;
+			        document.getElementById("model").value = car1.model;
+			        document.getElementById("make").value = car1.make;
+			        document.getElementById("carType").value = car1.carType;
+				}
+				
+				if(elDrop.value=='sedan'){
+					document.getElementById("year").value = car2.year;
+			        document.getElementById("model").value = car2.model;
+			        document.getElementById("make").value = car2.make;
+			        document.getElementById("carType").value = car2.carType;
+				}
+			}
+			
+			
+			}	
+		</script>
+	</body>
+	</html> 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+	<script>
+		require(["dojo/dom","dojo/domReady!"],function(dom){
+			
+			functionsetText(node,text){
+				
+				node = dom.Id(node);
+				node.innerHTML = text;
+			}
+			
+			var one = dom.byId ("one");
+			setText(one,"One has been set");
+			setText("two","Two has been set");
+			
+			
+		});
+	</script>
+	</head>
+	

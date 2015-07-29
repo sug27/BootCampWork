@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+	
+	<meta charset = "utf-8">
+	<title>Dojo Demo</title>
+	<style type="text/css">
+		#one{
+			font-style: italic;
+			font-family: fantasy;
+			font-weight: 100;
+		}
+		
+		</style>
+	</head>
+	<body class = "claro">
+		<div id = "container"></div>
+		  <div class = "row">
+			<div class = "col-md-3">
+				<label for= "1">login</label>
+				<input type = "text" name = "login" data-dojo-type = "dijit/form/TextBox"
+					id = "login"/>
+				<label for= "1">id</label>
+				<input type = "text" name = "id" data-dojo-type = "dijit/form/TextBox"
+					id = "id"/>	
+		    </div>
+			
+			<div id = "one" class = "col-md-8">
+			</div>
+		</div>
+	
+				
+		
+		<script>
+			require(["dojo/parser","dojo/dom","dijit/registry","dojo/on" ,"dojo/json","dojo/request","dijit/form/TextBox" ,"dojo/domReady!"],function(parser,dom,registry,on,JSON,request){
+				request.get("https://www.googleapis.com/books/v1/volumes?q=intitle:kinky",{handleAs:"json"}).then(function(response){
+				  parser.parse();
+				
+				function setText(node,text){
+				
+				node = dom.byId(node);
+				node.innerText = text;
+			}
+			
+			var one = dom.byId ("one");
+			
+			
+			var firstBar = registry.byId("login");
+			var secondBar = registry.byId("id");
+			
+			// var newData = JSON.parse(data);
+			for(var key in response){
+				console.log(key,response[key]);
+			}
+			firstBar.set("value",response.items[0].volumeInfo.title);
+			secondBar.set("value",response.items[0].volumeInfo.description);
+			
+				
+				});
+				
+			});
+		</script>
+		
+	</body>
+	 
+	
+</html>	
+	

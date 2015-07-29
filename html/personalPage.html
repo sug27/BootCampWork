@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stephen Anton Petkus</title>
+		
+		<style type = "text/css">
+		
+		
+		body{
+			background-color: darkgrey;
+		}
+		h1{
+			color: red;
+			margin-top: 0px;
+			font-size: 4vw;
+			
+		}
+		h2{
+			opacity: .5;
+		}
+		
+		p{
+			font-size: 2vw;
+		}
+		
+	
+		
+		
+		div#left{
+			
+		    background-color: blue;
+            float: left;
+			width:33vw;
+			height: 100vh;
+			
+			
+		}
+		div#mid{
+			background-color: red;
+			float: left;
+			width:33%;
+			height: 100vh;
+		}
+		
+		div#right{
+			float: left;
+			width: 32%;
+			height: 100vh;
+			background-color: green;
+	    }
+		
+		div#choices{
+			display: inline-block;
+			vertical-align: middle;
+			
+		}
+		
+		label.title{
+			float: left;
+			clear: both;
+			width:8vw;
+			font-size: 1.1vw;
+		}
+		
+		.registration{
+			width: 50%;
+			font-size: 1.1vw;
+			margin-bottom: .4vw;
+		}
+		
+		form select{
+			width: 16%;
+			margin-bottom: 1%;
+		}
+		
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+		input[type=radio]{
+			border:0px;
+			width: 2%;
+			height: 1em;
+		}
+		
+		.chtext{
+			width:8vw;
+			max-width: 99.8px;
+			font-size: 1.1vw;
+		}
+		
+		input[type=checkbox]{
+			width: 1vw;
+			height: 1vh;
+			padding: 0;
+			margin: 0;
+		}
+		
+		select{
+			font-size: 1.1vw;
+			
+		}
+		
+		div#btn{
+			width: 10vw;
+			margin:0 auto;
+			height:3vh;
+		}
+	
+		
+		
+		</style>
+	</head>
+	<body>
+		
+		<!--div for left col-->
+		<div id="left" >
+		<img src = "C:\Users\Stephen\Desktop\me.jpg" id= "pic" alt = "me" title = "me"/>
+		</div>
+		
+		<!--div for middle col-->
+		<div id = "mid">
+		<form method = "post" id = "userReg">
+			<div>
+			<label class="title" for = "txtFname"> First  Name</label>
+			<input type = "text"  id = "txtFname" class="registration"/></input>
+		    
+			</div>
+			
+			<div >
+			<label class="title" for="txtLast">Last Name</label>
+			<input type = "text"  id = "txtLast" name="txtLast" class= "registration"/></input>
+			</div>
+			
+			<div>
+			<label class="title" for= "email"> E-mail</label>
+			<input type = "text" id = "email" name="email" class= "registration"/></input>
+			
+			</div>
+			
+			<div>
+			<label class="title" for= "Country"> Country</label>
+			<select id= "Country" name= "country" class= "registration">
+				<option value = "" selected = "selected"></option>
+  			    <option value ="United States">United States</option>
+				<option value ="Ireland"> Ireland</option>
+			</select>
+			</div>
+			
+			<div>
+				<label class="title" for="dob">Date of Birth</label>
+				<select id = "day" name = "day">
+					<option value = "-1">Day:</option>
+					<option value= "1">1</option>
+					<option value= "30">30</option>
+					</select>
+				<select id = "month" name = "month">
+					<option value= "-1">Month:</option>
+					<option value="1">Jan</option>
+					<option value="12">Dec</option>
+				</select>
+				<select id="year" name="year">
+					<option value = "-1">Year</option>
+					<option value="00">2000</option>
+					</select>
+				</div>
+				<div>
+					<label class="title">Sex</label>
+					<input type= "radio" name="sex" value="male"/><span class="chtext">Male</span>
+					<input type="radio" name= "sex" value="female"/><span class="chtext">Female</span>
+				</div>
+				<div>
+					<label class="title"> Interests</label>
+					<div id = "choices">
+					    <input type = "checkbox" name="interests" value="a"/><span class="chtext">A</span><br/>
+					    <input type ="checkbox" name= "interests" value ="b"/><span class="chtext">B</span><br/>
+					</div>
+				</div>
+				
+				<br/>
+				<div id ="btn">	 
+			        <input type="submit" value= "submit" class="registration"/></input>
+		        </div>	
+			</div>
+			
+			<!--div for right col-->
+			<div id = "right">
+			    <h1> About Me </h1>
+				<p> A long time ago in a galaxy far,far, away......I made columns....that <b>shrink.</b></p>
+		    </div>
+			</form>
+		</body>
+		</html>

@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div> 
+        Hello World from the View!!!!
+        <label> select a month</label>
+        <form method="post" action=" = " @Url.Action("Index") "">
+            @for (int i = 0; i < 12; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </form>
+    </div>
+</body>
+</html>

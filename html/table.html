@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">	
+			<script src = "C:\Users\Stephen\Desktop\pages\html\jquery-2.1.4.js"></script>
+	        <script src= "C:\Users\Stephen\Desktop\pages\html\table.js"></script>
+			<style	type = "text/css">
+			.err{
+				border:2px solid red;
+			}
+			
+			.success{
+				background-color: green !important;
+			}
+			</style>
+			
+			
+		</head>
+		
+		<body>
+			<div class="container">
+				<div class="row">
+					<div class = "col-md-6">
+						<table class = "table table-bordered" id ="table">
+							<tbody>
+							<tr>
+								<td> </td>
+								<td>Order ID</td>
+								<td>Product #</td>
+								<td>Description</td>
+								<td>Price</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class = "col-md-6">
+						<form method="post">
+						<div class= "form-group">
+							<label class="title" for = "prodNum"> Product Number</label>
+			                <input type= "text" class="form-control" name= "prodNum" />
+							
+							<label class="title" for = "desc"> Description</label>
+			                <input type= "text" class="form-control" name= "desc" />
+							
+							<label class="title" for = "price"> Price</label>
+			                <input type= "text" class="form-control" name= "price" />
+							
+							<label class="title" for = "total"> Total</label>
+			                <input type= "text"  id = "total" name= "total" />
+						</div>
+					
+					
+						<div class = "col-md-6">
+							<button class= "btn btn-default" type= "input">Add</button>
+						</div>
+						
+					</div>
+					</form>
+				</div>
+		    </div>
+			</div>
+		</body>
+	</html>

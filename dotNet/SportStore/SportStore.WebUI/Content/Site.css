@@ -1,0 +1,60 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+div#categories a{
+    font:bold 1.1em "Arial Narrow","Franklin Gothic Medium",Arial;display :block;
+    text-decoration:none; padding:.6em; color:black;
+    border-bottom:1px solid silver;
+   
+}
+
+div#categories a.selected{background-color: #666; color: white;}
+div#categories a:hover{background-color:#CCC;}
+div#categories a.selected:hover{background-color: #666;}
+
+.selected{
+    background-color: white;
+}
+
+h2{margin-top: 0.3em}
+tfoot td{border-top: 1px dotted gray; font-weight:bold;}
+.actionButtons a, input.actionButtons{
+    font:.8em Arial; color: white; margin: .5em;
+    text-decoration:none;padding:.15em 1.5em .2em 1.5em;
+    background-color:#353535; border:1px solid black;
+}
+
+div#cart {
+    float: right;
+    margin: .8em;
+    color: silver;
+    background-color: #555;
+    padding: .5em .5em .5em 1em;
+}
+
+div#cart a{
+    text-decoration:none; padding:.4em 1em .4em 1em; line-height:2.1em;
+    margin-left:.5em; background-color:#333; color:white; border:1px solid black;
+}
